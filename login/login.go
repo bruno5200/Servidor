@@ -64,8 +64,6 @@ func Login(c *fiber.Ctx) error {
 			"description": "Request Invalida",
 		})
 	} else {
-		return c.Status(200).JSON(&fiber.Map{
-			"": logins,
-		})
+		return c.JSON(logins[len(logins)-1])
 	}
 }
